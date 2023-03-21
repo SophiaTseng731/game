@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今天吃什么？</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+}
+
+h1 {
+margin-top: 50px;
+}
+
+button {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>今天吃什么？</h1>
+<button id="btn">点我抽签</button>
+<div id="fortune"></div>
+<script>
+// 定义吃饭选项数组
+const options = [
+"黄焖鸡米饭",
+"麦当劳",
+"西少爷",
+"和合谷",
+"大懒龙",
+"霸蛮",
+"自助盒饭",
+"钵钵鸡",
+"酸菜鱼",
+"胶东小海鲜",
+"罗森凑合吃",
+"没脸吃！",
+"空气"
+];
+
+// 获取按钮元素
+const btn = document.querySelector('#btn');
+
+// 获取显示抽签结果的元素
+const fortune = document.querySelector('#fortune');
+
+// 绑定点击事件
+btn.addEventListener('click', () => {
+// 随机选择一个选项
+const index = Math.floor(Math.random() * options.length);
+const chosenOption = options[index];
+
+// 在页面中显示结果
+fortune.innerText = `今天吃 ${chosenOption}!`;
+});
+</script>
+</body>
+</html>
